@@ -1,8 +1,6 @@
 #include<graphics.h>
 #include <stdio.h>
 #include <conio.h>//接收键盘输入
-#include <mmsystem.h>//多媒体设备接口
-#pragma comment(lib,"winmm.lib")
 #include <time.h>
 
 #define snakeL 100 //蛇的最大长度
@@ -70,9 +68,7 @@ int main(){
 
 void Init(){
 	initgraph(800,600);
-	mciSendString(L"open fade.mp3 alias bk",0,0,0);
-	mciSendString(L"play bk repeat",0,0,0);
-	cleardevice();
+	cleardevice();//清除屏幕
 	rectangle(0,0,10,10);
 	SNAKE.szb[0].x = 0;
 	SNAKE.szb[0].y = 0;
